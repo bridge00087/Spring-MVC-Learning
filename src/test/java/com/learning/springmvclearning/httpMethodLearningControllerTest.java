@@ -14,13 +14,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @WebMvcTest
-class SampleControllerTest {
+class httpMethodLearningControllerTest {
 
     @Autowired
     MockMvc mockMvc;
 
     @Test
-    public void helloTest() throws Exception {
+    public void httpMethodTest() throws Exception {
         // GET
         mockMvc.perform(get("/hello"))
                 .andDo(print())
@@ -31,10 +31,6 @@ class SampleControllerTest {
         mockMvc.perform(put("/hello"))
                 .andDo(print())
                 .andExpect(status().isOk());
-
-        // POST(NG)
-        mockMvc.perform(post("/hello"))
-                .andDo(print())
-                .andExpect(status().isMethodNotAllowed());
     }
+
 }

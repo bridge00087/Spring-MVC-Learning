@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class SampleController {
+public class HttpMethodLearningController {
 
     // 全てのリクエスト許可する。
     /*
@@ -15,11 +15,8 @@ public class SampleController {
 
     // GET, PUTのリクエストのみ許可する。
     @RequestMapping(value = "/hello", method = {RequestMethod.GET, RequestMethod.PUT})
-
-
     // リターン値をHTTP Response Bodyに直接書く
     @ResponseBody
-
     public String hello() {
         return "hello";
     }
